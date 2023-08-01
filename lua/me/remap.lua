@@ -12,8 +12,7 @@ vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 vim.keymap.set("i", "<C-s>", function ()
 	--vim.cmd("<Esc>") -- Unable to get this line to work. Hence adding the below line
-	vim.api.nvim_input("<Esc>")
-	vim.cmd("w")
+	vim.api.nvim_input("<Esc>:w<CR>")
 end)
 
 -- For remap doubts
@@ -57,3 +56,11 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- Will start replacing the word you are on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- For folding
+vim.keymap.set("n", "<Space><Space>", function ()
+	vim.api.nvim_input("za")
+end, { noremap = true })
+vim.keymap.set("n", "<C-Space>", function ()
+	vim.api.nvim_input("zR")
+end, { noremap = true })
