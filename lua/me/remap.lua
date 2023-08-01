@@ -1,4 +1,5 @@
 vim.g.mapleader = " " -- Looks like leader should be declared before usage
+-- vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declared before usage
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- Split function
