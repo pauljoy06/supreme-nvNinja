@@ -1,4 +1,4 @@
-print ("Hello from remap")
+vim.g.mapleader = " " -- Looks like leader should be declared before usage
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- Split function
