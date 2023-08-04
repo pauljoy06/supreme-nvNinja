@@ -15,7 +15,7 @@ require("telescope").setup({
         mappings = {
             i = {
                 ['<esc>'] = actions.close,
-                ['<leader>tt'] = require('telescope.actions.layout').toggle_preview
+                ['<leader>ttp'] = require('telescope.actions.layout').toggle_preview
             },
         },
         preview = {
