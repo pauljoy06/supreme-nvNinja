@@ -1,7 +1,7 @@
 local builtin = require('telescope.builtin')
 local actions = require("telescope.actions")
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ps', builtin.find_files, {})
 --Disabling as for some reason Ctrl + p is causing delay in opening window
 -- vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<C-;>', builtin.git_files, {})
