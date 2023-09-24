@@ -15,6 +15,11 @@ vim.keymap.set("i", "<C-s>", function ()
 	vim.api.nvim_input("<Esc>:w<CR>")
 end)
 
+vim.api.nvim_set_keymap('n', '<Tab>', '<C-W><C-W>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "''", ':vsplit<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "\"\"", ':split<CR>', {noremap = true, silent = true})
+
+
 -- For remap doubts
 -- https://www.youtube.com/watch?v=w7i4amO_zaE&list=PLhOOcOi09vxUvXE8deqS2JZHnhHCbN3lh&index=2&t=1464s
 
