@@ -9,6 +9,11 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep)
 -- vim.keymap.set('n', '<leader>ps', function()
 -- builtin.grep_string({ search = vim.fn.input("Grep > ") });
 -- end)
+-- vim.api.nvim_set_keymap('n',
+--     '<C-r>',
+--     [[<cmd>lua require('telescope.actions').reload()<CR>]],
+--     { noremap = true, silent = true }
+-- )
 
 require("telescope").setup({
     defaults = {
