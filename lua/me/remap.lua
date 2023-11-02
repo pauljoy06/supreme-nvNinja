@@ -1,5 +1,29 @@
 vim.g.mapleader = "," -- Looks like leader should be declared before usage
+-- vim.g.user_emmet_leader_key = '.'
 -- vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declared before usage
+vim.g.user_emmet_expandabbr_key = ";;" -- Looks like leader should be declared before usage
+-- vim.g.user_emmet_settings = { 'html':{'quote_char':\"'\"}, 'javascript':{'quote_char':\"'\"} }
+-- let g:user_emmet_settings = {'html':{'quote_char':"'"},'javascript':{'quote_char':"'"}}
+-- Below  user_emmet_settings not working
+vim.g.user_emmet_settings = {
+    javascript = {
+        attributes = {
+            name = "'${1}'",
+            id = "'${2}'",
+            -- class = "'${3}'",
+            value = "'${4}'",
+            -- class = 'className'
+        },
+    },
+    jsx = {
+        attributes = {
+            class = 'className'
+        }
+    },
+    typescript = {
+        extends = 'tsx'
+    }
+}
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- Split function
@@ -69,3 +93,7 @@ end, { noremap = true })
 vim.keymap.set("n", "<C-Space>", function ()
 	vim.api.nvim_input("zR")
 end, { noremap = true })
+
+--Reload Configuration
+vim.api.nvim_set_keymap('n', '<leader>rc', ':luafile ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
+

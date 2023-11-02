@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -170,6 +175,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/vim-matchup",
+    url = "https://github.com/andymass/vim-matchup"
   }
 }
 

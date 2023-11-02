@@ -1,0 +1,184 @@
+set encoding=utf-8
+set nocompatible
+set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set history=50
+set ruler
+set showcmd
+set wrap
+set sidescroll=10                           " scroll with 10 characters side offset
+set incsearch
+set so=5                                    " provides a gap while scrolling
+set autowrite
+set number                                  " sets the line number
+" set relativenumber                          " sets the relative line number
+set number                          " sets the relative line number
+set nocp                                    " omnicpp installation
+set mouse=a
+
+" Set no backup or swapfile
+set nobackup
+set noswapfile
+
+" set option& sets the default value
+if has("vms")
+    set nobackup
+" else
+"     set backup
+"     set backupext=.bak                      " sets the default backup extension
+    " set backupdir=.bak                      " sets the default backup directory
+endif
+
+filetype plugin on
+filetype indent on
+
+" Set filetype tab spaces
+autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
+autocmd Filetype html,css,xml,jinja,less,json :setlocal sw=2 ts=2 sts=2
+" au BufNewFile,BufRead *.jade set filetype=html
+" autocmd BufRead,BufNewFile *.jade setlocal ft=jade
+au BufRead,BufNewFile *.fish set filetype=fish
+" au BufRead,BufNewFile *.jinja set filetype=jinja.html
+
+" syntax options
+set t_Co=256
+" set background=dark
+syntax enable
+" syntax clear - disable syntax highlighting for a moment
+" syntax off - disable syntax highlighting permanently
+colorscheme vitamins
+set cursorline
+hi CursorLine cterm=bold ctermbg=234
+
+"" Editor
+set tw=0
+set clipboard=unnamed
+
+
+"" Folding
+" set foldmethod=manual
+set foldmethod=indent
+set foldnestmax=6
+noremap <Space> za
+noremap <NUL> zR
+"
+" Recursively open fold
+noremap <CR> zO
+
+
+" Vim vertical line at 80
+au Filetype python set colorcolumn=80
+highlight ColorColumn ctermbg=234
+" guibg=234
+
+" For vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+" let g:airline_theme="hogan"
+
+" CtrlP settings
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+call plug#begin('~/.vim/plugged')
+    " Plug 'Chiel92/vim-autoformat'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'ctrlpvim/ctrlp.vim'           " The search plugin
+    " Plug 'xolox/vim-session'            " Session manager
+    " Plug 'xolox/vim-misc'               " Dependency for Session manager
+    Plug 'tpope/vim-eunuch'             " Enables UNIX shell like commands
+    
+    Plug 'gaving/vim-textobj-argument'  " To treat arguments like objects
+    Plug 'tomtom/tcomment_vim'          " For toggling comment
+
+    " Theme related
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    Plug 'Yggdroot/indentLine'          " The thin line along indentation
+
+    Plug 'mattn/emmet-vim'              " Emmet
+    Plug 'garbas/vim-snipmate'          " Snipmate
+    Plug 'MarcWeber/vim-addon-mw-utils' " Dependency for snipmate
+    Plug 'tomtom/tlib_vim'              " Dependency for snipmate
+    Plug 'honza/vim-snippets'           " Optional dependency for snipmate
+    Plug 'jiangmiao/auto-pairs'         " Pair ', \", {, [ and (
+    " Plug 'tpope/vim-surround'
+
+    Plug 'Glench/Vim-Jinja2-Syntax'
+    Plug 'MaxMEllon/vim-jsx-pretty'
+
+    Plug 'eslint/eslint'
+    Plug 'epilande/vim-react-snippets'  " React code snippets
+    " Plug 'prettier/vim-prettier'
+call plug#end()
+
+" Emmet Plugin
+let g:user_emmet_expandabbr_key = '<C-X>'
+let g:user_emmet_togglecomment_key = '<C-V>'
+
+" indentLine Plugin
+let g:indentLine_color_term = 7
+
+" ctrlp.vim Plugin
+set shell=/bin/bash " Required if bash is not used as the user's shell
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = 'react'
+
+" Vim sessions
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+
+let g:snipMate = { 'snippet_version' : 1 }
+
+
+" Custom Vim commands
+" command Evimrc :e ~/.vim/vimrc
+
+" Prettier related
+" autocmd BufWritePre *.js Prettier
+
+
+
+" View manipulation
+noremap tt :tab split<CR>
+map '' :vsplit<CR>
+map "" :split<CR>
+" map ;; :wq<CR>
+nmap <Tab> <c-w><c-w>
+
+" File manipulation
+map <c-s> <Esc>:w<CR>
+inoremap <c-s> <Esc>:w<CR>
+noremap <c-q> <Esc>:q<CR>
+noremap <C-e> <Esc>:so ~/.vim/vimrc<CR>
+
+
+" Move current line
+noremap <C-Up> :m .-2<CR>
+noremap <C-Down> :m .+1<CR>
+
+" Duplicate current line
+noremap <S-Up> :t .-1<CR>
+noremap <S-Down> :t .<CR>
+
+" Emmet
+let g:user_emmet_settings = {'html':{'quote_char':"'"},'javascript':{'quote_char':"'"}}
+" let g:user_emmet_settings = {'html':{'quote_char':"'"},'javascript':{'quote_char':"'"},'emmet.includeLanguages':{'javascript':'javascriptreact'}}
+
+" Remapping tcomment toggle key
+map <C-c> gcc
+" vmap <C-c> gcc
+
+" set background=dark
+
+inoremap <C-z> <Esc>u
+inoremap <A-a> <Esc>
+
+execute "set <M-a>=\ea"
+noremap <M-a> <Esc>
+vnoremap <M-a> <Esc>
+
