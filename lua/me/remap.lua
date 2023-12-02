@@ -100,3 +100,12 @@ end, { noremap = true })
 --Reload Configuration
 vim.api.nvim_set_keymap('n', '<leader>rc', ':luafile ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
 
+-- Function to toggle between relative number, number, and no number
+function toggle_line_numbers()
+    -- vim.wo.number = not vim.wo.number
+    vim.wo.relativenumber = not vim.wo.relativenumber
+end
+
+-- Map a key to trigger the toggle
+vim.api.nvim_set_keymap('n', '<leader>tn', [[:lua toggle_line_numbers()<CR>]], { noremap = true, silent = true })
+
