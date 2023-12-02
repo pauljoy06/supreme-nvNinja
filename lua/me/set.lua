@@ -33,6 +33,5 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldnestmax = 6
 
 --Set to to enable emmet
-vim.opt.timeoutlen = 1000
-vim.o.timeoutlen = 1000
+-- vim.opt.timeoutlen = 1000
 

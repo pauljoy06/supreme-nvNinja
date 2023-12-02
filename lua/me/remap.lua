@@ -1,7 +1,7 @@
 vim.g.mapleader = "," -- Looks like leader should be declared before usage
 -- vim.g.user_emmet_leader_key = '.'
 -- vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declared before usage
-vim.g.user_emmet_expandabbr_key = ";;" -- Looks like leader should be declared before usage
+vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declared before usage
 -- vim.g.user_emmet_settings = { 'html':{'quote_char':\"'\"}, 'javascript':{'quote_char':\"'\"} }
 -- let g:user_emmet_settings = {'html':{'quote_char':"'"},'javascript':{'quote_char':"'"}}
 -- Below  user_emmet_settings not working
@@ -92,6 +92,9 @@ vim.keymap.set("n", "<Space>", function ()
 end, { noremap = true })
 vim.keymap.set("n", "<C-Space>", function ()
 	vim.api.nvim_input("zR")
+end, { noremap = true })
+vim.keymap.set("n", "<leader>ycn", function ()
+	vim.api.nvim_input("^/className<CR>wwyi\'")
 end, { noremap = true })
 
 --Reload Configuration
