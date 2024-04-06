@@ -30,7 +30,7 @@ vim.opt.colorcolumn = "80"
 
 -- For folding 
 vim.opt.foldmethod = "indent"
-vim.opt.foldnestmax = 6
+vim.opt.foldnestmax = 8
 
 --Set to to enable emmet
 -- vim.opt.timeoutlen = 1000

@@ -1,3 +1,4 @@
+-- https://lsp-zero.netlify.app/v3.x/language-server-configuration.html
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
