@@ -52,5 +52,7 @@ return require('packer').startup(function(use)
     use 'andymass/vim-matchup'
     -- https://github.com/mattn/emmet-vim
     use 'mattn/emmet-vim'
+    -- https://github.com/lewis6991/gitsigns.nvim
+    use 'lewis6991/gitsigns.nvim'
 end)
 

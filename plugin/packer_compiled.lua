@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/paulpadamadan/.local/share/nvim/site/pack/packer/start/harpoon",
