@@ -27,7 +27,6 @@ vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declare
 -- }
 --
 
-print('Configuring emmet...')
 vim.g.user_emmet_settings = {
     javascript = {
         quote_char = "'",
@@ -42,7 +41,6 @@ vim.g.user_emmet_settings = {
         extends = 'tsx'
     }
 }
-print('Done configuring emmet !')
 
 
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
