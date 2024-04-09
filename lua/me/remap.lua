@@ -5,25 +5,46 @@ vim.g.user_emmet_expandabbr_key = "<C-x>" -- Looks like leader should be declare
 -- vim.g.user_emmet_settings = { 'html':{'quote_char':\"'\"}, 'javascript':{'quote_char':\"'\"} }
 -- let g:user_emmet_settings = {'html':{'quote_char':"'"},'javascript':{'quote_char':"'"}}
 -- Below  user_emmet_settings not working
+-- vim.g.user_emmet_settings = {
+--     javascript = {
+--         attributes = {
+--             name = "'${1}'",
+--             id = "'${2}'",
+--             -- class = "'${3}'",
+--             value = "'${4}'",
+--             -- class = 'className'
+--         },
+--         quote_char = "'",
+--     },
+--     jsx = {
+--         attributes = {
+--             class = 'className'
+--         }
+--     },
+--     typescript = {
+--         extends = 'tsx'
+--     }
+-- }
+--
+
+print('Configuring emmet...')
 vim.g.user_emmet_settings = {
     javascript = {
-        attributes = {
-            name = "'${1}'",
-            id = "'${2}'",
-            -- class = "'${3}'",
-            value = "'${4}'",
-            -- class = 'className'
-        },
+        quote_char = "'",
+        extends = 'jsx', --To replace 'class' with 'className' for React
     },
+    -- Below code not verified yet
     jsx = {
-        attributes = {
-            class = 'className'
-        }
+        quote_char = "'"
     },
     typescript = {
+        quote_char = "'",
         extends = 'tsx'
     }
 }
+print('Done configuring emmet !')
+
+
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- Split function
