@@ -54,5 +54,15 @@ return require('packer').startup(function(use)
     use 'mattn/emmet-vim'
     -- https://github.com/lewis6991/gitsigns.nvim
     use 'lewis6991/gitsigns.nvim'
+    -- https://github.com/L3MON4D3/LuaSnip
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        -- tag = "v2.2", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+    -- https://github.com/rafamadriz/friendly-snippets [For LuaSnip]
+    use 'rafamadriz/friendly-snippets'
 end)
 
