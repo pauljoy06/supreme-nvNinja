@@ -138,3 +138,24 @@ vim.api.nvim_set_keymap('n', '<leader>tn', [[:lua toggle_line_numbers()<CR>]], {
 -- 		ls.change_choice(1)
 -- 	end
 -- end, {silent = true})
+
+-- Lua function to insert a blank line above the current line without moving the cursor
+local function insert_blank_line_above(direction)
+    -- Save the current cursor position
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    
+    if direction == 'above' then
+        -- Insert a new line above the current line
+        vim.api.nvim_buf_set_lines(0, row-1, row-1, false, {""})
+        row = row + 1
+    elseif direction == 'below' then
+        vim.api.nvim_buf_set_lines(0, row, row, false, {""})
+    end
+    -- Restore the cursor to the original position
+    vim.api.nvim_win_set_cursor(0, {row, col})
+end
+
+-- Set the keymap in normal mode
+vim.api.nvim_set_keymap('n', '[<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('above') end})
+vim.api.nvim_set_keymap('n', ']<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('below') end})
+
