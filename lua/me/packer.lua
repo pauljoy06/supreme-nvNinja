@@ -66,5 +66,15 @@ return require('packer').startup(function(use)
         -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
+    -- https://github.com/tpope/vim-dadbod
+    use({
+        'tpope/vim-dadbod',
+        requires = {
+            -- https://github.com/kristijanhusak/vim-dadbod-ui
+            'kristijanhusak/vim-dadbod-ui',
+            -- https://github.com/kristijanhusak/vim-dadbod-completion
+            'kristijanhusak/vim-dadbod-completion'
+        },
+    })
 end)
 
