@@ -6,3 +6,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 -- Reference: https://www.reddit.com/r/neovim/comments/qotoa2/react_snippets_with_l3mon4d3luasnip_in_neovim/
 require('luasnip').filetype_extend("javascript", { "javascriptreact" })
 require('luasnip').filetype_extend("javascript", { "html" })
+
+require('luasnip').filetype_extend("typescript", { "typescriptreact" }) -- Not working
+require('luasnip').filetype_extend("typescript", { "html" }) -- Not working
+

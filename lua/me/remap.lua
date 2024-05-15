@@ -38,7 +38,10 @@ vim.g.user_emmet_settings = {
     },
     typescript = {
         quote_char = "'",
-        extends = 'tsx'
+        extends = 'tsx',
+    },
+    typescriptreact = {
+        quote_char = "'",
     }
 }
 
