@@ -162,3 +162,20 @@ end
 vim.api.nvim_set_keymap('n', '[<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('above') end})
 vim.api.nvim_set_keymap('n', ']<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('below') end})
 
+-- Increase width of the current split
+vim.api.nvim_set_keymap('n', '<Leader>+', ':vertical resize +5<CR>', { noremap = true, silent = true })
+
+-- Decrease width of the current split
+vim.api.nvim_set_keymap('n', '<Leader>-', ':vertical resize -5<CR>', { noremap = true, silent = true })
+
+-- Increase height of the current split by 5 lines
+vim.api.nvim_set_keymap('n', '<Leader>t', ':resize +5<CR>', { noremap = true, silent = true })
+
+-- Decrease height of the current split by 5 lines
+vim.api.nvim_set_keymap('n', '<Leader>s', ':resize -5<CR>', { noremap = true, silent = true })
+
+-- These mappings control the size of splits (height/width) Doesn't work. Need to check why
+vim.keymap.set("n", "<M-,>", "<c-w>5<")
+vim.keymap.set("n", "<M-.>", "<c-w>5>")
+vim.keymap.set("n", "<M-t>", "<C-W>+")
+vim.keymap.set("n", "<M-s>", "<C-W>-")
