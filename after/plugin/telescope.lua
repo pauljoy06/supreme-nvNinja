@@ -23,8 +23,13 @@ require("telescope").setup({
                 ['<leader>ttp'] = require('telescope.actions.layout').toggle_preview
             },
         },
-        preview = {
-            hide_on_startup = false     -- hide previewer when picker starts
-        }
     },
+    -- color_devicons = true,
+    -- pickers = {
+    --     find_files = { }
+    -- },
+    preview = {
+        hide_on_startup = false     -- hide previewer when picker starts
+    }
 })
+

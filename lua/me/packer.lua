@@ -8,7 +8,10 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-tree/nvim-web-devicons'}
+        },
         tag = '0.1.2' -- or, branch = '0.1.x'packe
     }
     use 'navarasu/onedark.nvim'
