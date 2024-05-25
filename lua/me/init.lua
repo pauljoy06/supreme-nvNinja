@@ -5,7 +5,9 @@ require("me.remap")
 --Theme config
 --Git: https://github.com/navarasu/onedark.nvim
 require('onedark').setup {
-    style = 'darker'
+    -- options
+    -- https://github.com/navarasu/onedark.nvim?tab=readme-ov-file#themes
+    style = 'deep'  -- dark, darker, cool, deep, warm, warmer
 }
 require('onedark').load()
 
