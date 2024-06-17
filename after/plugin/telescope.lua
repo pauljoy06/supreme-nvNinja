@@ -24,7 +24,7 @@ require("telescope").setup({
             },
         },
     },
-    -- color_devicons = true,
+    color_devicons = true,
     -- pickers = {
     --     find_files = { }
     -- },
