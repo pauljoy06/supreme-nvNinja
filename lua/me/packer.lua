@@ -58,18 +58,6 @@ return require('packer').startup(function(use)
     use 'mattn/emmet-vim'
     -- https://github.com/lewis6991/gitsigns.nvim
     use 'lewis6991/gitsigns.nvim'
-    -- https://github.com/L3MON4D3/LuaSnip
-    use({
-        "L3MON4D3/LuaSnip",
-        requires = {
-            -- https://github.com/rafamadriz/friendly-snippets [For LuaSnip]
-            'rafamadriz/friendly-snippets'
-        },
-        -- follow latest release.
-        -- tag = "v2.2", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!:).
-        run = "make install_jsregexp"
-    })
     -- https://github.com/tpope/vim-dadbod
     use({
         'tpope/vim-dadbod',
@@ -80,5 +68,37 @@ return require('packer').startup(function(use)
             'kristijanhusak/vim-dadbod-completion'
         },
     })
+
+    -- https://github.com/L3MON4D3/LuaSnip
+    use({
+        "L3MON4D3/LuaSnip",
+        requires = {
+            -- https://github.com/rafamadriz/friendly-snippets [For LuaSnip]
+            'rafamadriz/friendly-snippets',
+            'hrsh7th/nvim-cmp'
+        },
+        -- follow latest release.
+        -- tag = "v2.2", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+    use {
+      'hrsh7th/nvim-cmp',
+      config = function ()
+        require'cmp'.setup {
+        snippet = {
+          expand = function(args)
+            require'luasnip'.lsp_expand(args.body)
+          end
+        },
+
+        sources = {
+          { name = 'luasnip' },
+          -- more sources
+        },
+      }
+      end
+    }
+    use { 'saadparwaiz1/cmp_luasnip' }
 end)
 
