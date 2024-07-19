@@ -100,5 +100,7 @@ return require('packer').startup(function(use)
       end
     }
     use { 'saadparwaiz1/cmp_luasnip' }
+     -- Used by a plug tmux-resurrecter in tmux to keep track of sessions
+    use 'tpope/vim-obsession'
 end)
 
