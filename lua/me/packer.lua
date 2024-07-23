@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
     }
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
     use 'ThePrimeagen/harpoon'
-    -- use 'mbbill/undotree'
+    use 'mbbill/undotree'
 
     -- https://github.com/VonHeikemen/lsp-zero.nvim
     use {
