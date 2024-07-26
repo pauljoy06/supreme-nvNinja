@@ -10,3 +10,5 @@ require('luasnip').filetype_extend("javascript", { "html" })
 require('luasnip').filetype_extend("typescript", { "typescriptreact" }) -- Not working
 require('luasnip').filetype_extend("typescript", { "html" }) -- Not working
 
+require('luasnip.loaders.from_lua').load({ paths = './my_snips.lua' })
+
