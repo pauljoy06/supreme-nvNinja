@@ -1,14 +1,14 @@
 local builtin = require('telescope.builtin')
 local actions = require("telescope.actions")
 
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc='Search all files in folder'})
 --Disabling as for some reason Ctrl + p is causing delay in opening window
 -- vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 --  Windows specific configuration below
-vim.keymap.set('n', '<A-;>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', builtin.live_grep)
+vim.keymap.set('n', '<A-;>', builtin.git_files, {desc='Search for files in git'})
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {desc='Live grep search for project'} )
 -- vim.keymap.set('n', '<leader>ps', function()
 -- builtin.grep_string({ search = vim.fn.input("Grep > ") });
 -- end)
@@ -17,6 +17,7 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep)
 --     [[<cmd>lua require('telescope.actions').reload()<CR>]],
 --     { noremap = true, silent = true }
 -- )
+vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>', {desc='Open Telescope keymaps'})
 
 require("telescope").setup({
     defaults = {
