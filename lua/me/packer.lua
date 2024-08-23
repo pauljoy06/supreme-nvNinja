@@ -25,6 +25,16 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
 
+    -- use 'LunarWatcher/auto-pairs'
+    use {
+        "windwp/nvim-autopairs",
+        opt = false,  -- Ensures it loads automatically
+        -- event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+
     -- https://github.com/VonHeikemen/lsp-zero.nvim
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -48,7 +58,6 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use 'LunarWatcher/auto-pairs'
     use {
         'jose-elias-alvarez/null-ls.nvim',
         requires = 'nvim-lua/plenary.nvim'
