@@ -33,7 +33,7 @@ vim.g.user_emmet_settings = {
         extends = 'jsx', --To replace 'class' with 'className' for React
     },
     -- Below code not verified yet
-    jsx = {
+    javascriptreact = {
         quote_char = "'"
     },
     typescript = {
@@ -129,7 +129,12 @@ function toggle_line_numbers()
 end
 
 -- Map a key to trigger the toggle
-vim.api.nvim_set_keymap('n', '<leader>tn', [[:lua toggle_line_numbers()<CR>]], { noremap = true, silent = true })
+vim.keymap.set(
+    'n',
+    '<leader>tn',
+    [[:lua toggle_line_numbers()<CR>]],
+    {desc='Toggle line number modes'}
+)
 
 --For LuaSnip
 -- local ls = require("luasnip")
@@ -159,20 +164,20 @@ local function insert_blank_line_above(direction)
 end
 
 -- Set the keymap in normal mode
-vim.api.nvim_set_keymap('n', '[<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('above') end})
-vim.api.nvim_set_keymap('n', ']<Space>', '', { noremap=true, silent=true, callback=function() insert_blank_line_above('below') end})
+vim.keymap.set('n', '[<Space>', '', { callback=function() insert_blank_line_above('above') end})
+vim.keymap.set('n', ']<Space>', '', { callback=function() insert_blank_line_above('below') end})
 
--- Increase width of the current split
-vim.api.nvim_set_keymap('n', '<Leader>+', ':vertical resize +5<CR>', { noremap = true, silent = true })
+-- Increase width of the current split (not working)
+vim.keymap.set('n', '<Leader>+', ':vertical resize +5<CR>', {desc='Increase width of current split'})
 
 -- Decrease width of the current split
-vim.api.nvim_set_keymap('n', '<Leader>-', ':vertical resize -5<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>-', ':vertical resize -5<CR>', {desc='Decrease width of current split'})
 
 -- Increase height of the current split by 5 lines
-vim.api.nvim_set_keymap('n', '<Leader>t', ':resize +5<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>t', ':resize +5<CR>')
 
 -- Decrease height of the current split by 5 lines
-vim.api.nvim_set_keymap('n', '<Leader>s', ':resize -5<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>s', ':resize -5<CR>')
 
 -- These mappings control the size of splits (height/width) Doesn't work. Need to check why
 vim.keymap.set("n", "<M-,>", "<c-w>5<")
