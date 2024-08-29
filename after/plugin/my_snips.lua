@@ -15,13 +15,12 @@ ls.add_snippets(
 )
 
 
-
 ls.add_snippets("all", {
     s("reactcomp", fmt([[
         import React from 'react';
 
-        const {} = () => {{
-            return <div>
+        const {} = (props) => {{
+            return <div className='{}'>
                 {}
             </div>
         }}
@@ -29,7 +28,8 @@ ls.add_snippets("all", {
         export default {};
     ]], {
         i(1, "ComponentName"),
-        i(3, "Component Content"),
+        i(3, "className"),
+        i(4, "content"),
         i(2, "ComponentName")  -- This reuses the first insert node
     })),
 })
