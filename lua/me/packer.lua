@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
     })
 
     -- https://github.com/L3MON4D3/LuaSnip
+    -- https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
     use({
         "L3MON4D3/LuaSnip",
         requires = {
@@ -92,21 +93,24 @@ return require('packer').startup(function(use)
         run = "make install_jsregexp"
     })
     use {
-      'hrsh7th/nvim-cmp',
-      config = function ()
-        require'cmp'.setup {
-        snippet = {
-          expand = function(args)
-            require'luasnip'.lsp_expand(args.body)
-          end
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-path', -- File path completions
         },
+        config = function ()
+            require'cmp'.setup {
+                snippet = {
+                    expand = function(args)
+                        require'luasnip'.lsp_expand(args.body)
+                    end
+                },
 
-        sources = {
-          { name = 'luasnip' },
-          -- more sources
-        },
-      }
-      end
+                sources = {
+                    { name = 'luasnip' },
+                    -- more sources
+                },
+            }
+        end
     }
     use { 'saadparwaiz1/cmp_luasnip' }
      -- Used by a plug tmux-resurrecter in tmux to keep track of sessions
