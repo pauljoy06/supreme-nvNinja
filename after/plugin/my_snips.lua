@@ -23,8 +23,8 @@ ls.add_snippets("all", {
         }}
     ]], {
         i(1, "ComponentName"),
-        i(3, "className"),
-        i(4, "content"),
+        i(2, "className"),
+        i(3, "content")
     })),
 })
 
