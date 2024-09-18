@@ -27,6 +27,23 @@ require("telescope").setup({
                 ['<leader>ttp'] = require('telescope.actions.layout').toggle_preview
             },
         },
+        -- vimgrep_arguments = {
+        --     'rg',
+            -- '--hidden',           -- Search hidden files
+            -- '--no-heading',
+            -- '--with-filename',
+            -- '--line-number',
+            -- '--column',
+            -- '--smart-case',
+            -- '--ignore-file', '.gitignore', -- Use .gitignore to skip files
+            -- '--ignore-dir', 'build',       -- Additionally ignore 'build' directory
+            -- '--ignore-dir', 'logs'         -- Additionally ignore 'logs' directory
+        -- },
+        -- vimgrep_arguments = vim.tbl_extend('force', require('telescope.config').values.vimgrep_arguments, {
+        --     '--ignore-dir', 'node_modules',
+        --     '--ignore-dir', 'dist',
+        -- })
+
     },
     color_devicons = true,
     -- pickers = {
