@@ -21,6 +21,7 @@ vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>', {desc='Open Telescop
 
 require("telescope").setup({
     defaults = {
+        sorting_strategy = 'ascending',  -- Keeps the top result selected as you type
         mappings = {
             i = {
                 ['<esc>'] = actions.close,
