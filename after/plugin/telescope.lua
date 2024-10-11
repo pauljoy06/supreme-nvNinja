@@ -7,8 +7,9 @@ vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc='Search all files in
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 --  Windows specific configuration below
-vim.keymap.set('n', '<A-;>', builtin.git_files, {desc='Search for files in git'})
-vim.keymap.set('n', '<leader>ps', builtin.live_grep, {desc='Live grep search for project'} )
+vim.keymap.set('n', '<A-;>', builtin.git_files, { desc='Search for files in git' })
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc='Live grep search for project' } )
+vim.keymap.set('n', '<leader>qf', builtin.quickfix, { desc='Open quickfix list' })
 -- vim.keymap.set('n', '<leader>ps', function()
 -- builtin.grep_string({ search = vim.fn.input("Grep > ") });
 -- end)
