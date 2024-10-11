@@ -168,16 +168,16 @@ vim.keymap.set('n', '[<Space>', '', { callback=function() insert_blank_line_abov
 vim.keymap.set('n', ']<Space>', '', { callback=function() insert_blank_line_above('below') end})
 
 -- Increase width of the current split (not working)
-vim.keymap.set('n', '<Leader>+', ':vertical resize +5<CR>', {desc='Increase width of current split'})
+-- vim.keymap.set('n', '<Leader>+', ':vertical resize +5<CR>', {desc='Increase width of current split'})
 
 -- Decrease width of the current split
-vim.keymap.set('n', '<Leader>-', ':vertical resize -5<CR>', {desc='Decrease width of current split'})
+-- vim.keymap.set('n', '<Leader>-', ':vertical resize -5<CR>', {desc='Decrease width of current split'})
 
 -- Increase height of the current split by 5 lines
-vim.keymap.set('n', '<Leader>t', ':resize +5<CR>')
+-- vim.keymap.set('n', '<Leader>t', ':resize +5<CR>')
 
 -- Decrease height of the current split by 5 lines
-vim.keymap.set('n', '<Leader>s', ':resize -5<CR>')
+-- vim.keymap.set('n', '<Leader>s', ':resize -5<CR>')
 
 -- These mappings control the size of splits (height/width) Doesn't work. Need to check why
 vim.keymap.set("n", "<M-,>", "<c-w>5<")
