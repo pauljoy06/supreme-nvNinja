@@ -35,6 +35,9 @@ vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>', {desc='Open Telescop
 vim.keymap.set('n', '<leader>qf', builtin.quickfix, { desc='Open quickfix list' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { noremap = true, silent = true, desc = 'Next quickfix entry' })
 vim.keymap.set('n', '[q', ':cprev<CR>', { noremap = true, silent = true, desc = 'Previous quickfix entry' })
+vim.keymap.set('n', ']Q', ':cnewer<CR>', { noremap = true, silent = true, desc = 'Next quickfix list' })
+vim.keymap.set('n', '[Q', ':colder<CR>', { noremap = true, silent = true, desc = 'Previous quickfix list' })
+
 
 
 require("telescope").setup({
