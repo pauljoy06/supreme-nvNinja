@@ -33,6 +33,7 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc='Live grep search fo
 vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>', {desc='Open Telescope keymaps'})
 
 vim.keymap.set('n', '<leader>qf', builtin.quickfix, { desc='Open quickfix list' })
+vim.keymap.set('n', '<leader>qh', builtin.quickfixhistory, { desc='Open quickfix list' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { noremap = true, silent = true, desc = 'Next quickfix entry' })
 vim.keymap.set('n', '[q', ':cprev<CR>', { noremap = true, silent = true, desc = 'Previous quickfix entry' })
 vim.keymap.set('n', ']Q', ':cnewer<CR>', { noremap = true, silent = true, desc = 'Next quickfix list' })
