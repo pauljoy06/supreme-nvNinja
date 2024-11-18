@@ -46,3 +46,15 @@ ls.add_snippets("all", {
         i(2, "ComponentName")
     })),
 })
+
+ls.add_snippets("javascript", {
+  s("us", {
+    t({"const ["}),
+    i(1, "state"),     -- initial state variable name
+    t({", set"}),
+    i(2, "State"),     -- state setter function
+    t({"] = useState("}),
+    i(3, "initialValue"), -- initial value for the state
+    t({");"})
+  })
+})
