@@ -131,7 +131,7 @@ end
 -- Map a key to trigger the toggle
 vim.keymap.set(
     'n',
-    '<leader>tn',
+    '<leader>tln',
     [[:lua toggle_line_numbers()<CR>]],
     {desc='Toggle line number modes'}
 )
