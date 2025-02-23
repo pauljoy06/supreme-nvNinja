@@ -62,8 +62,7 @@ vim.keymap.set("i", "<C-s>", function ()
 end)
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<C-W><C-W>', {noremap = true, silent = true})
--- To override <Tab> mapping on the top "Since <Tab> and Ctrl+i are the same in terminals, Ctrl+i will also perform <C-W><C-W> instead of jumping forward in the location list."
-vim.api.nvim_set_keymap('n', '<C-i>', '<C-i>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>i', '<C-i>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', "''", ':vsplit<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', "\"\"", ':split<CR>', {noremap = true, silent = true})
 
