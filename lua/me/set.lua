@@ -35,3 +35,18 @@ vim.opt.foldnestmax = 16
 --Set to to enable emmet
 -- vim.opt.timeoutlen = 1000
 
+-- To enable file reload on external change
+vim.o.autoread = true
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File changed on disk. Reloaded!", vim.log.levels.WARN)
+  end,
+})
+
