@@ -62,3 +62,10 @@ require("telescope").setup({
     }
 })
 
+-- To remove folding of results (added this because when indent is set as 2. The results from Telescope are folded)
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "TelescopeResults",
+    callback = function()
+        vim.opt_local.foldenable = false
+    end
+})
