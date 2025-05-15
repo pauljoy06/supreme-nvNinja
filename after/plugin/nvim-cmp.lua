@@ -1,9 +1,10 @@
+-- No changes needed here, your current setup should work fine
+-- but let's verify that nvim-cmp remains properly configured
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        -- Can set select to true if first item should be used for auto-complete without selection.
         ['<CR>'] = cmp.mapping.confirm({select = false}),
     }),
     -- To preselect the first item in the available list
@@ -14,12 +15,8 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'buffer' },
-        { name = 'path' }, -- Option to enable file path suggestions
+        { name = 'path' },  -- To enable file path suggestion
         { name = 'luasnip' },
-        -- Need to check if below sources are valid 
-        -- { name = 'calc' },
-        -- { name = 'emoji' },
-        -- { name = 'spell' },
     },
 })
 

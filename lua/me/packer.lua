@@ -35,22 +35,16 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- https://github.com/VonHeikemen/lsp-zero.nvim
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    -- LSP Setup (without lsp-zero)
+    use 'neovim/nvim-lspconfig'             -- Core LSP functionality
+    use 'williamboman/mason.nvim'           -- Language server installer
+    use 'williamboman/mason-lspconfig.nvim' -- Bridge between mason and lspconfig
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
-        }
-    }
+    -- Autocompletion (keep these since you already have them configured)
+    use 'hrsh7th/nvim-cmp'      
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+
     -- https://github.com/numToStr/Comment.nvim
     use {
         'numToStr/Comment.nvim',
@@ -59,8 +53,8 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = 'nvim-lua/plenary.nvim'
+      'nvimtools/none-ls.nvim',  -- This is a fork of null-ls maintained for newer Neovim versions
+      requires = 'nvim-lua/plenary.nvim'
     }
     use 'andymass/vim-matchup'
     -- https://github.com/mattn/emmet-vim
