@@ -9,6 +9,12 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'luasnip' },
+  },
 })
 
 -- Setup vim-dadbod
@@ -18,4 +24,3 @@ cmp.setup.filetype({ 'sql' }, {
         { name = 'buffer' },
     },
 })
-
