@@ -1,9 +1,9 @@
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -30,8 +30,22 @@ vim.opt.colorcolumn = "80"
 
 -- For folding 
 vim.opt.foldmethod = "indent"
-vim.opt.foldnestmax = 8
+vim.opt.foldnestmax = 16
 
 --Set to to enable emmet
 -- vim.opt.timeoutlen = 1000
 
+-- To enable file reload on external change
+vim.o.autoread = true
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File changed on disk. Reloaded!", vim.log.levels.WARN)
+  end,
+})
