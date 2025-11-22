@@ -21,13 +21,8 @@ vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc='Search all files in
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 -- vim.keymap.set('n', '<C-;>', builtin.git_files, {})
 
---  Windows specific configuration below
-vim.keymap.set('n', '<A-;>', builtin.git_files, { desc='Search for files in git' })
-
--- Map the function to a keybinding (e.g., Alt-;)
-vim.keymap.set('n', '<A-;>', project_files, { desc = 'Search project files intelligently' })
-vim.keymap.set('n', '<M-;>', project_files, { desc = 'Search project files (Meta-;)' })
-vim.keymap.set('n', '<C-;>', project_files, { desc = 'Search project files' })
+-- Preferred project files shortcut
+vim.keymap.set('n', '<leader>pp', project_files, { desc = 'Project files' })
 
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc='Live grep search for project' } )
 vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>', {desc='Open Telescope keymaps'})
